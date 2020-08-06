@@ -15,7 +15,7 @@
 #' \item{CHR}{CNV chromosome.}
 #' \item{BP1}{starting location in base pairs.} 
 #' \item{BP2}{ending location in base pairs.} 
-#' \item{TYPE}{copy number (0,1,2,3,or 4).}
+#' \item{TYPE}{copy number (0,1,3,or 4).}
 #' }
 #'
 #' @references Brucker, A., Lu, W., Marceau West, R., Yu, Q-Y., Hsiao, C. K.,

@@ -4,8 +4,17 @@
 \alias{concur}
 \title{Copy Number Profile Curve-Based Association Test}
 \usage{
-concur(cnv, X, pheno, phenoY, phenoType, ..., nCore = 1L,
-  outFileKernel = NULL, verbose = TRUE)
+concur(
+  cnv,
+  X,
+  pheno,
+  phenoY,
+  phenoType,
+  ...,
+  nCore = 1L,
+  outFileKernel = NULL,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{cnv}{A character or data.frame object. If character, the 
@@ -21,16 +30,18 @@ or kilo-base pairs,
 name of the data file containing the covariate data (with a header). If 
 data.frame, the covariate data. The data must contain a column titled 
 "ID" containing a unique patient id. This column must contain the
-same patient identifiers as contained in the CNV data specified in 
-input cnv. Categorical
+patient identifiers of the CNV data specified in 
+input cnv; however, it can contain patient identifiers not contained in cnv.
+Further, inputs X and pheno must contain the same patient identifiers. Categorical
 variables must be translated into design matrix format.}
 
 \item{pheno}{A character or data.frame object. If character, the 
 name of the data file containing the phenotype data (with a header). If 
 data.frame, the phenotype data. The data must contain a column titled 
 "ID" containing a unique patient id. This column must contain the
-all of the patient identifiers contained in the CNV data specified in 
-input cnv.}
+patient identifiers of the CNV data specified in 
+input cnv; however, it can contain patient identifiers not contained in cnv.
+Further, inputs X and pheno must contain the same patient identifiers.}
 
 \item{phenoY}{A character object. The column name in input pheno containing
 the phenotype of interest.}
@@ -118,10 +129,15 @@ should be combined as
 
 data(cnvData)
 
+# limit data for examples
+exCNV <- cnvData$ID \%in\% paste0("P", 1:150)
+exCOV <- covData$ID \%in\% paste0("P", 1:150)
+exPHE <- phenoData$ID \%in\% paste0("P", 1:150)
+
 # binary phenoType
-results <- concur(cnv = cnvData,
-                  X = covData,
-                  pheno = phenoData,
+results <- concur(cnv = cnvData[exCNV,],
+                  X = covData[exCOV,],
+                  pheno = phenoData[exPHE,],
                   phenoY = 'PHEB',
                   phenoType = 'bin',
                   nCore = 1L,
@@ -129,9 +145,9 @@ results <- concur(cnv = cnvData,
                   verbose = TRUE)
 
 # continuous phenoType
-results <- concur(cnv = cnvData,
-                  X = covData,
-                  pheno = phenoData,
+results <- concur(cnv = cnvData[exCNV,],
+                  X = covData[exCOV,],
+                  pheno = phenoData[exPHE,],
                   phenoY = 'PHEC',
                   phenoType = 'cont',
                   nCore = 1L,

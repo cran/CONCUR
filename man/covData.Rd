@@ -4,11 +4,13 @@
 \name{covData}
 \alias{covData}
 \title{Pseudo Covariate Data}
-\format{covData is a data.frame containing 400 observations with 2 columns
+\format{
+covData is a data.frame containing 400 observations with 2 columns
 \describe{
 \item{ID}{character patient identifier.}
 \item{SEX}{binary indicator of M/F.}
-}}
+}
+}
 \usage{
 data(cnvData)
 }

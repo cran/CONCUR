@@ -41,6 +41,7 @@
   }
 
   cnvID <- colnames(x = kernel)
+  if (is.factor(x = pheno$ID)) pheno$ID <- as.character(x = levels(pheno$ID))[pheno$ID]
 
   # add diagonal elements for individuals with pheno data but no cnv data
   inBoth <- pheno$ID %in% cnvID
@@ -122,6 +123,7 @@
   if (!is.null(x = X)) {
     if (!{"ID" %in% colnames(X)}) stop("ID must be a column of X data.frame")
   }
+  if (is.factor(x = X$ID)) X$ID <- as.character(x = levels(X$ID))[X$ID]
 
   if (!is.null(x = X)) {
 

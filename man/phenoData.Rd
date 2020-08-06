@@ -4,12 +4,14 @@
 \name{phenoData}
 \alias{phenoData}
 \title{Pseudo Phenotype Data}
-\format{phenoData is a data.frame containing 400 observations with 3 columns
+\format{
+phenoData is a data.frame containing 400 observations with 3 columns
 \describe{
 \item{ID}{character patient identifier.}
 \item{PHEB}{binary phenotype.}
 \item{PHEC}{continuous phenotype.}
-}}
+}
+}
 \usage{
 data(cnvData)
 }

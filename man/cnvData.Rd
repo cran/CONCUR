@@ -4,14 +4,16 @@
 \name{cnvData}
 \alias{cnvData}
 \title{Pseudo Copy Number Variants Data}
-\format{cnvData is a data.frame containing 522 observations with 5 columns: 
+\format{
+cnvData is a data.frame containing 522 observations with 5 columns: 
 \describe{
 \item{ID}{character patient identifier.}
 \item{CHR}{CNV chromosome.}
 \item{BP1}{starting location in base pairs.} 
 \item{BP2}{ending location in base pairs.} 
-\item{TYPE}{copy number (0,1,2,3,or 4).}
-}}
+\item{TYPE}{copy number (0,1,3,or 4).}
+}
+}
 \usage{
 data(cnvData)
 }
