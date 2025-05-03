@@ -1,9 +1,21 @@
 Package: CONCUR
 Type: Package
 Title: Copy Number Profile Curve-Based Association Test
-Version: 1.4
-Date: 2022-06-05
-Author: Amanda Brucker, Shannon T. Holloway, Jung-Ying Tzeng
+Version: 1.5
+Date: 2025-05-03
+Author: Amanda Brucker [aut],
+  Shannon T. Holloway [aut, cre],
+  Jung-Ying Tzeng [aut]
+Authors@R: c(person(given = "Amanda",
+                        family = "Brucker",
+                        role = "aut"),
+                 person(given = c("Shannon", "T."),
+                        family = "Holloway",
+                        role = c("aut", "cre"),
+                        email = "shannon.t.holloway@gmail.com"),
+                 person(given = "Jung-Ying",
+                        family = "Tzeng",
+                        role = "aut"))
 Maintainer: Shannon T. Holloway <shannon.t.holloway@gmail.com>
 Description: Implements a kernel-based association test for copy number 
   variation (CNV) aggregate analysis
@@ -20,5 +32,5 @@ RoxygenNote: 7.1.0
 Collate: 'commonAUC.R' 'segLength.R' 'popFunc.R' 'uniqueCombinations.R'
         'createDF.R' 'deldup.R' 'CAUCkernel.R' 'cnvData.R' 'compFunc.R'
         'dataChecks.R' 'test.qt.R' 'test.bt.R' 'pv_func.R' 'concur.R'
-Packaged: 2022-06-05 18:27:51 UTC; 19194
-Date/Publication: 2022-06-07 12:00:28 UTC
+Packaged: 2025-05-03 18:19:06 UTC; 19194
+Date/Publication: 2025-05-03 18:40:02 UTC
